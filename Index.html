@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lushi Market | Le commerce autrement</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f5f8;color:#17233c}
+header{background:#101b35;color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#ff7938}
+.hero{background:#101b35;color:white;padding:65px 8%;text-align:center}
+.hero h1{font-size:48px;margin:10px}
+.hero p{color:#d5ddec;font-size:17px}
+.search{display:flex;max-width:600px;margin:25px auto;gap:8px}
+input{padding:15px;border:0;border-radius:8px;flex:1;min-width:0;font-size:16px}
+button{background:#ff7938;color:white;border:0;padding:14px 20px;border-radius:8px;font-weight:bold;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:25px 20px}
+h2{margin-top:35px}
+.categories,.products{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.category,.product{background:white;padding:22px;border-radius:12px;text-align:center;box-shadow:0 2px 8px #0000000d}
+.category{font-weight:bold;font-size:18px}
+.icon{font-size:35px;display:block;margin-bottom:10px}
+.product{padding:0;overflow:hidden;text-align:left}
+.photo{font-size:55px;background:#e9edf4;padding:30px;text-align:center}
+.details{padding:15px}
+.price{font-size:19px;font-weight:bold;color:#101b35}
+footer{background:#101b35;color:white;text-align:center;padding:30px;margin-top:40px}
+@media(max-width:600px){.hero h1{font-size:36px}.categories,.products{grid-template-columns:1fr 1fr}.search{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Lushi <span>Market</span></div>
+<div>Lubumbashi • RDC</div>
+</header>
+
+<section class="hero">
+<h1>Le commerce autrement.</h1>
+<p>Achetez et vendez facilement près de chez vous.</p>
+<div class="search">
+<input id="search" placeholder="Que recherchez-vous ?">
+<button onclick="chercher()">Rechercher</button>
+</div>
+</section>
+
+<main>
+<h2>Nos catégories</h2>
+<div class="categories">
+<div class="category"><span class="icon">👟</span>Mode</div>
+<div class="category"><span class="icon">📱</span>Électronique</div>
+<div class="category"><span class="icon">🛋️</span>Maison</div>
+</div>
+
+<h2>Quelques annonces</h2>
+<div class="products" id="products">
+<div class="product"><div class="photo">👟</div><div class="details"><b>Baskets</b><p class="price">65 000 FC</p>Lubumbashi</div></div>
+<div class="product"><div class="photo">📱</div><div class="details"><b>Smartphone</b><p class="price">420 000 FC</p>Lubumbashi</div></div>
+<div class="product"><div class="photo">🛋️</div><div class="details"><b>Fauteuil moderne</b><p class="price">280 000 FC</p>Lubumbashi</div></div>
+</div>
+<p style="color:#687386;font-size:13px">Les annonces affichées sont des exemples de démonstration.</p>
+</main>
+
+<footer>
+<strong>Lushi Market</strong>
+<p>Le commerce autrement.</p>
+Une initiative congolaise 🇨🇩
+</footer>
+
+<script>
+function chercher(){
+let mot=document.getElementById('search').value.toLowerCase();
+document.querySelectorAll('.product').forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(mot)?'block':'none';
+});
+}
+</script>
+</body>
+  </html>
